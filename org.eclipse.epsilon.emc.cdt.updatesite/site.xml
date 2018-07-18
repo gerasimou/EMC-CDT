@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.eclipse.epsilon.emc.cdt.feature_1.0.0.201807190058.jar" id="org.eclipse.epsilon.emc.cdt.feature" version="1.0.0.201807190058">
+      <category name="EMC-CDT"/>
+   </feature>
+   <category-def name="EMC-CDT" label="Epsilon EMC-CDT"/>
+</site>

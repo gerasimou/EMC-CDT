@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <bundle id="org.eclipse.epsilon.emc.cdt" version="1.0.0.qualifier">
+      <category name="EMC-CDT"/>
+   </bundle>
+   <bundle id="org.eclipse.epsilon.emc.cdt.dt" version="1.0.0.qualifier">
+      <category name="EMC-CDT"/>
+   </bundle>
+   <category-def name="EMC-CDT" label="Epsilon EMC-CDT"/>
+</site>
