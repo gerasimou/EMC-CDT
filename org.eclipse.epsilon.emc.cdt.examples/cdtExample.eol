@@ -40,17 +40,17 @@ sourceFiles.println();
 
 
 //find all function definitions and function declarations in library header files
-"\n------------------------------------".println("\n\nFunction declarations in library header files");
-var headerFile = null;
-for (libFile in libraryFiles){
-	if (libFile.isHeaderUnit()){
-		//libFile.name.println();
-		project.tu  = libFile;
-		break;
-	}
-}
+//"\n------------------------------------".println("\n\nFunction declarations in library header files");
+//var headerFile = null;
+//for (libFile in libraryFiles){
+//	if (libFile.isHeaderUnit()){
+//		//libFile.name.println();
+//		project.tu  = libFile;
+//		break;
+//	}
+//}
 
-
+/*
 var libFunctions = new Sequence;
 libFunctions = FunctionDeclarator.all;
 libFunctions.size.println();
@@ -58,4 +58,4 @@ libFunctions.size.println();
 for (i in Sequence{1..20}){
 	libFunctions.at(i).rawSignature.println();
 }
-
+*/
