@@ -23,6 +23,7 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.epsilon.common.util.StringProperties;
 import org.eclipse.epsilon.emc.cdt.propertygetter.CdtPropertyGetter;
 import org.eclipse.epsilon.emc.cdt.propertygetter.CdtPropertySetter;
+import org.eclipse.epsilon.emc.cdt.utilities.Utility;
 import org.eclipse.epsilon.eol.exceptions.EolRuntimeException;
 import org.eclipse.epsilon.eol.exceptions.models.EolEnumerationValueNotFoundException;
 import org.eclipse.epsilon.eol.exceptions.models.EolModelElementTypeNotFoundException;
@@ -231,6 +232,11 @@ public class CdtModel extends CachedModel<Object>{
 		
 		//get resolve bindings flag
 		resolveBindings = Boolean.parseBoolean(properties.getProperty(PROPERTY_RESOLVE_BINDINGS));
+		
+//		String message = cproject.getProject().getLocation().toFile().getAbsolutePath().toString();
+//		System.out.println(message);
+//		MessageUtility.writeToConsole("Console", message);
+//		MessageUtility.showConfirmMessage("Project information", message);		
 		
 		//init visitor
 		visitor = new ReflectiveASTVisitor(cproject, resolveBindings);

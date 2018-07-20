@@ -1,13 +1,20 @@
-package org.eclipse.epsilon.emc.cdt.dt;
+package org.eclipse.epsilon.emc.cdt.utilities;
 
+import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.ui.IWorkbenchWindow;
+import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.console.ConsolePlugin;
 import org.eclipse.ui.console.IConsole;
 import org.eclipse.ui.console.IConsoleManager;
 import org.eclipse.ui.console.MessageConsole;
 import org.eclipse.ui.console.MessageConsoleStream;
 
-public class Utility {
-
+public class MessageUtility {
+	
+	private static boolean reply =  false;
 	
 	protected static MessageConsole findConsole (String consoleName){
 		ConsolePlugin consolePlugin 	= ConsolePlugin.getDefault();
@@ -29,11 +36,23 @@ public class Utility {
 	public static void writeToConsole(String consoleName, String message){
 		MessageConsole console 		= findConsole(consoleName);
 		MessageConsoleStream out	= console.newMessageStream();
-		out.println(message);
-		
-//		IDocument text = console.getDocument().set(message);;
-		
-		
+		out.println(message);		
+	}
+	
+	public static boolean showConfirmMessage(String title, String message){
+		Display.getDefault().asyncExec(new Runnable() {
+		    @Override
+		    public void run() {
+		        IWorkbenchWindow iw = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
+		        Shell shell = iw.getShell();
+		        reply =  MessageDialog.openConfirm(shell, title, message);
+		    }
+		});
+		return reply;
+	}
+
+	public static boolean  showMessage(Shell shell, int kind, String title, String message){
+		return MessageDialog.open(kind, shell, title, message, SWT.NONE);  
 	}
 	
 }
