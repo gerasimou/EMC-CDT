@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="org.eclipse.epsilon.emc.cdt.feature"
-      label="EMC-CDT"
-      version="1.0.6">
+      label="EMC-CDT-feature"
+      version="1.0.6.qualifier">
 
    <description url="http://www.example.com/description">
-      [Enter Feature Description here.]
+      EMC-CDT Epsilon Driver for C/C++ project
    </description>
 
    <copyright url="http://www.example.com/copyright">
